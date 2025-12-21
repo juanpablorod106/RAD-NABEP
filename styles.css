@@ -489,16 +489,22 @@ main section.right .ganantials .ganantial:hover {
         gap: 2rem;
     }
 
-    nav.profile-area button#menu-btn {
-        display: inline;
+    /* CORRECCIÓN: selector y estilo del botón del menú (mobile/tablet) */
+    nav .profile-area button#menu-btn {
+        display: inline-block;
         background: transparent;
         color: var(--color-dark);
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        padding: 0.2rem 0.6rem;
     }
 
     main{
         grid-template-columns: 1fr;
     }
 
+    /* El aside debe estar presente en el DOM para animar; lo dejamos fuera de pantalla por defecto */
     main aside{
         position: fixed;
         top: 0;
@@ -508,8 +514,13 @@ main section.right .ganantials .ganantial:hover {
         width: 22rem;
         height: 100vh;
         box-shadow: 2rem 0 2rem var(--color-primary-light);
-        display: none;
-        animation: showSidebar 300ms ease forwards;
+        display: block; /* estaba 'none' y evitaba la animación */
+        transition: left 300ms ease;
+    }
+
+    /* clase para abrir la sidebar desde JS */
+    main aside.open {
+        left: 0;
     }
 
     @keyframes showSidebar{

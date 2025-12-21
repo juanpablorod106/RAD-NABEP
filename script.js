@@ -26,18 +26,31 @@ new Chart(chart,{
     }
 })
 
-// Mostrar o esconder columna
-const menuBtn = document.querySelector('#menu-btn')
-const closeBtn = document.querySelector('#close-btn')
-const sidebar = document.querySelector('#menu-btn')
+// Mostrar/ocultar columna (sidebar) - selectores corregidos
+const menuBtn = document.querySelector('#menu-btn');
+const closeBtn = document.querySelector('#close-btn');
+const sidebar = document.querySelector('main aside'); // selecciona el aside
 
-menuBtn.addEventListener('click', () => {
-    sidebar.computedStyleMap.display = 'block';
-})
+if (menuBtn && sidebar) {
+    menuBtn.addEventListener('click', () => {
+        sidebar.classList.add('open');
+    });
+}
 
-menuBtn.addEventListener('click', () => {
-    sidebar.computedStyleMap.display = 'none';
-})
+if (closeBtn && sidebar) {
+    closeBtn.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+    });
+}
+
+// También permite cerrar tocando fuera de la sidebar en mobile
+document.addEventListener('click', (e) => {
+    if (!sidebar) return;
+    const isClickInside = sidebar.contains(e.target) || (menuBtn && menuBtn.contains(e.target));
+    if (!isClickInside && sidebar.classList.contains('open')) {
+        sidebar.classList.remove('open');
+    }
+});
 
 // Cambiar tema de claro a oscuro
 const themeBtn = document.querySelector('.theme-btn');
@@ -47,4 +60,4 @@ themeBtn.addEventListener('click', () =>{
 
     themeBtn.querySelector('span:first-child').classList.toggle('active');
     themeBtn.querySelector('span:last-child').classList.toggle('active');
-}) 
+})
