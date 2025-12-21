@@ -28,8 +28,8 @@
 .dark-theme {
     --color-white: #131316;
     --color-light: #23232a;
-    --color-white: #ddd;
-    --color-white: #adacb5;
+    --color-dark: #ddd;
+    --color-gray-dark: #adacb5;
 }
 
 *{
