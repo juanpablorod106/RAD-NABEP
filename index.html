@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Responsivo de administrador</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./images/logo-removebg-preview.png">
+    <!-- API DE ICONOS Y MATERIAL-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <!--GOOGLE FONTS (POPPINS)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Inicio de la barra de navegación [header]-->
+    <nav>
+        <div class="container">
+            <img src="./images//icon-w.jpeg" class="logo">
+            <div class="search-bar">
+                <span class="material-icons-sharp">search</span>
+                <input type="search" placeholder="Busqueda">      
+            </div>
+            <div class="profile-area">
+                <div class="theme-btn">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="profile-photo">
+                        <img src="./images/profile-2.jpg" alt="">
+                    </div>
+                    <h5>Juan Rodríguez</h5>
+                    <span class="material-icons-sharp">expand_more</span>
+                </div>
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!--Final de la barra de navegación [header]-->
+    <main>
+        <!--Inicio del Aside-->
+        <aside>
+            <button id="close-btn">
+                <span class="material-icons-sharp">close</span>
+            </button>
+
+            <!--Inicio de sidebar-->
+            <div class="sidebar">
+                <a href="#" class="active">
+                    <span class="material-symbols-sharp">dashboard</span>
+                    <h4>Dashboard</h4>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-sharp">monitoring</span>
+                    <h4>Monitoreo</h4>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-sharp">table</span>
+                    <h4>AICO</h4>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-sharp">error</span>
+                    <h4>Fallas</h4>
+                </a>
+                
+                <a href="#">
+                    <span class="material-symbols-outlined">export_notes</span>
+                    <h4>Reportes</h4>
+                </a>
+                
+            </div>
+            <!--Final de sidebar-->
+
+            <div class="updates">
+                <span class="material-icons-sharp">update</span>
+                <h4>Actualizaciones disponibles</h4>
+                <small>Actualizaciones de seguridad</small>
+                <small>Actualizaciones generales</small>
+                <a href="#">Actualizar ahora</a>
+            </div>
+
+        </aside>
+        <!--Final del Aside-->
+
+        <!--Inicio del area media-->
+        <section class="middle">
+            <div class="headers-container">
+                <div class="header">
+                    <h1>Fecha de Registro</h1>
+                    <input type="date">
+                </div>
+                <div class="header">
+                    <h1>Pozo</h1>
+                    <input type="text">
+                </div>
+                <div class="header">
+                    <h1>Estaciones de flujo</h1>
+                    <input type="text">
+                </div>
+                <button class="search-btn">Buscar</button>
+            </div>
+
+        <!--Tarjetas de data general -->
+            <div class="monthly-report">
+                <div class="report">
+                    <h3>Pozos Categoría 1</h3>
+                    <details>
+                        <h1>[Nro-pozos]</h1>
+                        <h5 class="success">[porcentaje-total-pozos]</h6>
+                    </details>
+                    <p class="text-muted">El numero de pozos produciendo es [Nro-pozos]</p>
+                </div>
+                <div class="report">
+                    <h3>Pozos Categoría 2</h3>
+                    <details>
+                        <h1>[Nro-pozos]</h1>
+                        <h5 class="danger">[porcentaje-total-pozos]</h6>
+                    </details>
+                    <p class="text-muted">El numero de pozos interrumpidos es [Nro-pozos]</p>
+                </div>
+                <div class="report">
+                    <h3>Pozos Categoría 1</h3>
+                    <details>
+                        <h1>[Nro-pozos]</h1>
+                        <h5 class="success">[porcentaje-total-pozos]</h6>
+                    </details>
+                    <p class="text-muted">El numero de pozos produciendo es [Nro-pozos]</p>
+                </div>
+                <div class="report">
+                    <h3>Pozos Categoría 1</h3>
+                    <details>
+                        <h1>[Nro-pozos]</h1>
+                        <h5 class="success">[porcentaje-total-pozos]</h6>
+                    </details>
+                    <p class="text-muted">El numero de pozos produciendo es [Nro-pozos]</p>
+                </div>
+            </div>
+        <!--Final de tarjetas de data-->
+
+        <!-- Inicio de cards de ultimos pozos vistos-->
+
+            <div class="pozos-vistos">
+                <h2>Ultimos pozos vistos</h2>
+
+                <div class="badges">
+                    <div class="badge">
+                        <span class="material-symbols-outlined">oil_barrel</span>
+                    </div>
+                    <div class="badge">
+                        <span class="bg-primary"></span>
+                        <h4>POZO</h4>
+                        <h4>[BN] Y [BB]</h4>
+                    </div>
+                    <div class="badge">
+                        <span class="bg-success"></span>
+                        <h4>POZO</h4>
+                        <h4>[BN] Y [BB]</h4>
+                    </div>
+                    <div class="badge">
+                        <span class="bg-primary"></span>
+                        <h4>POZO</h4>
+                        <h4>[BN] Y [BB]</h4>
+                    </div>
+                    <div class="badge">
+                        <span class="bg-primary"></span>
+                        <h4>POZO</h4>
+                        <h4>[BN] Y [BB]</h4>
+                    </div>
+                    <div class="badge">
+                        <span class="bg-primary"></span>
+                        <h5>POZO</h5>
+                        <h4>[BN] Y [BB]</h4>
+                    </div>
+                    <div class="badge">
+                        <span class="bg-primary"></span>
+                        <h5>POZO</h5>
+                        <h4>[BN] Y [BB]</h4>
+                    </div>
+                    <div class="badge">
+                        <span class="bg-primary"></span>
+                        <h5>POZO</h5>
+                        <h4>[BN] Y [BB]</h4>
+                    </div>
+
+                </div>               
+            </div>
+
+        <!-- Fin de ultimos pozos vistos-->
+
+        <!-- Inicio de las graficas -->
+
+        <canvas id="chart"></canvas>
+        
+        <!-- Final de las graficas -->
+
+        </section>
+        <!--Final del area media-->
+
+        <!--Inicio del area derecha-->
+        <section class="right">
+            <div class="ganantials">
+                <div class="header">
+                    <h2>Pozos de mayor ganacial</h2>
+                    <a href="#">More <span class="material-symbols-outlined">chevron_right</span></a> 
+                </div>
+
+                <!-- Ganantial de un solo pozo -->
+                <div class="ganantial">
+                    <img src="./images/oil-pumpjack-extraction.svg" alt="">
+                    <h4>[nombre_pozo]</h4>
+                    <div class="ganantial-gross">
+                        <p>Barriles brutos</p>
+                        <small class="text-muted">[BB]</small>
+                    </div>
+                    <div class="ganatial-net">
+                        <p>Barriles netos</p>
+                        <small class="text-muted">[BN]</small>
+                    </div>
+                    <div class="ganantial-state">
+                        <p>Estado</p>
+                        <small class="danger">[Status]</small>
+                    </div>
+                </div>
+
+                <!-- Ganantial de un solo pozo -->
+                <div class="ganantial">
+                    <img src="./images/oil-pumpjack-extraction.svg" alt="">
+                    <h4>[nombre_pozo]</h4>
+                    <div class="ganantial-gross">
+                        <p>Barriles brutos</p>
+                        <small class="text-muted">[BB]</small>
+                    </div>
+                    <div class="ganatial-net">
+                        <p>Barriles netos</p>
+                        <small class="text-muted">[BN]</small>
+                    </div>
+                    <div class="ganantial-state">
+                        <p>Estado</p>
+                        <small class="danger">[Status]</small>
+                    </div>
+                </div>
+
+                <!-- Ganantial de un solo pozo -->
+                <div class="ganantial">
+                    <img src="./images/oil-pumpjack-extraction.svg" alt="">
+                    <h4>[nombre_pozo]</h4>
+                    <div class="ganantial-gross">
+                        <p>Barriles brutos</p>
+                        <small class="text-muted">[BB]</small>
+                    </div>
+                    <div class="ganatial-net">
+                        <p>Barriles netos</p>
+                        <small class="text-muted">[BN]</small>
+                    </div>
+                    <div class="ganantial-state">
+                        <p>Estado</p>
+                        <small class="danger">[Status]</small>
+                    </div>
+                </div>
+
+                <!-- Ganantial de un solo pozo -->
+                <div class="ganantial">
+                    <img src="./images/oil-pumpjack-extraction.svg" alt="">
+                    <h4>[nombre_pozo]</h4>
+                    <div class="ganantial-gross">
+                        <p>Barriles brutos</p>
+                        <small class="text-muted">[BB]</small>
+                    </div>
+                    <div class="ganatial-net">
+                        <p>Barriles netos</p>
+                        <small class="text-muted">[BN]</small>
+                    </div>
+                    <div class="ganantial-state">
+                        <p>Estado</p>
+                        <small class="danger">[Status]</small>
+                    </div>
+                </div>
+
+                <!-- Ganantial de un solo pozo -->
+                <div class="ganantial">
+                    <img src="./images/oil-pumpjack-extraction.svg" alt="">
+                    <h4>[nombre_pozo]</h4>
+                    <div class="ganantial-gross">
+                        <p>Barriles brutos</p>
+                        <small class="text-muted">[BB]</small>
+                    </div>
+                    <div class="ganatial-net">
+                        <p>Barriles netos</p>
+                        <small class="text-muted">[BN]</small>
+                    </div>
+                    <div class="ganantial-state">
+                        <p>Estado</p>
+                        <small class="danger">[Status]</small>
+                    </div>
+                </div>
+
+                <!-- Ganantial de un solo pozo -->
+                <div class="ganantial">
+                    <img src="./images/oil-pumpjack-extraction.svg" alt="">
+                    <h4>[nombre_pozo]</h4>
+                    <div class="ganantial-gross">
+                        <p>Barriles brutos</p>
+                        <small class="text-muted">[BB]</small>
+                    </div>
+                    <div class="ganatial-net">
+                        <p>Barriles netos</p>
+                        <small class="text-muted">[BN]</small>
+                    </div>
+                    <div class="ganantial-state">
+                        <p>Estado</p>
+                        <small class="danger">[Status]</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Final del area derecha-->
+
+    <!--Final de la barra de navegación [header]-->
+    </main>
+
+    <!--ChartJS-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
