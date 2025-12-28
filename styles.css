@@ -345,6 +345,69 @@ main section.middle .search-btn:hover {
     color: var(--color-dark);
 }
 
+/* Grillas de gráficas en area media: 2 filas x 3 columnas */
+main section.middle .charts-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 220px; /* altura de cada celda */
+    gap: 1rem;
+    margin-top: 1.4rem;
+    width: 100%;
+}
+
+/* Card que contiene canvas para aplicar padding/border-radius */
+main section.middle .chart-card{
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: 0.8rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* evitar que elementos (arco, leyenda flotante) sobresalgan */
+    position: relative;
+}
+
+/* Canvas ocupa todo el espacio del card */
+main section.middle .chart-canvas{
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+/* Ajuste: cuando la leyenda está a la derecha no recortar su área visual en mobile */
+@media (max-width: 600px) {
+    main section.middle .chart-card{
+        padding: 0.6rem;
+    }
+    main section.middle .chart-canvas {
+        /* forzar que el canvas se centre y no exceda */
+        object-fit: contain;
+    }
+}
+
+/* Responsive: tablets -> 2 columnas x N filas */
+@media screen and (max-width: 1024px) {
+    main section.middle .charts-grid{
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+    }
+}
+
+/* Responsive: móviles -> 1 columna */
+@media screen and (max-width: 600px) {
+    main section.middle .charts-grid{
+        grid-template-columns: 1fr;
+        grid-auto-rows: 180px;
+    }
+    main section.middle .chart-card{
+        padding: 0.6rem;
+        box-shadow: none;
+    }
+}
+
 @media (max-width: 768px) { /* Se debe ajustar el breakpoint según tus necesidades para "celular" */
     main section.middle .headers-container {
         flex-direction: column;
