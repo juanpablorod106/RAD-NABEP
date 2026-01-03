@@ -645,3 +645,70 @@ main section.right .ganantials .ganantial:hover {
         gap: 1.4rem;
     }
 }
+
+/* Middle diferente por cada boton, inicio */
+main section.middle.has-panel {
+    /* cuando hay panel abierto, mantenemos un flujo vertical claro */
+    display: block;
+}
+
+main section.middle .middle-panel {
+    margin-top: 1rem;
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    min-height: 40vh;
+    max-height: 70vh;
+    overflow: auto;
+}
+
+/* header del panel */
+main section.middle .middle-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+main section.middle .middle-panel-title {
+    font-size: 1.25rem;
+    margin: 0;
+}
+main section.middle .middle-panel-close {
+    display: none;
+}
+
+/* cuerpo (espacio en blanco) */
+main section.middle .middle-panel-body {
+    min-height: 26vh;
+}
+
+/* placeholder visual para indicar área vacía editable */
+main section.middle .middle-panel-placeholder {
+    border: 2px dashed rgba(0,0,0,0.06);
+    border-radius: 8px;
+    padding: 1.2rem;
+    color: var(--color-gray-dark);
+    background: linear-gradient(180deg, rgba(0,0,0,0.01), transparent);
+}
+
+/* Ajustes responsive */
+@media (max-width: 1024px) {
+    main section.middle .middle-panel {
+        min-height: 36vh;
+        max-height: 65vh;
+    }
+}
+
+@media (max-width: 600px) {
+    main section.middle .middle-panel {
+        padding: 1rem;
+        border-radius: 12px;
+        min-height: 30vh;
+        max-height: 60vh;
+    }
+    main section.middle .middle-panel-body {
+        min-height: 22vh;
+    }
+}
